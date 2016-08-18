@@ -4,9 +4,9 @@ var app = express()
 
 var apiai = require('apiai');
  
-var app = apiai("798d7a884de94566872e37c9959f1712");
+var appai = apiai("798d7a884de94566872e37c9959f1712");
  
-var request = app.textRequest('Give me th weather in Paris');
+var request = appai.textRequest('Give me th weather in Paris');
 
 
 app.set('port', (process.env.PORT || 5000))
