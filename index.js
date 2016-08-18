@@ -6,8 +6,8 @@ app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
 
-  response.send('Hello Great Worldfff!')
-
+  response.send('Hello Great Worldfff!');
+console.log("Node app is running at localhost:");
 })
 
 app.listen(app.get('port'), function() {
