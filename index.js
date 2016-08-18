@@ -7,7 +7,7 @@ var app = apiai("22db42aa367c4d3b9db67fdf3562c0e0");
 
 var entities = [
                     {
-                        name: "query",
+                        name: "test",
                         entries: [
     {
         "value": "weather.temperature",
