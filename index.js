@@ -6,7 +6,7 @@ var apiai = require('apiai');
  
 var appai = apiai("798d7a884de94566872e37c9959f1712");
  
-var request = appai.textRequest('Give me th weather in Paris');
+var requestai = appai.textRequest('Give me th weather in Paris');
 
 
 app.set('port', (process.env.PORT || 5000))
@@ -16,15 +16,15 @@ app.get('/', function(request, response) {
 
 	 
 	 
-	request.on('response', function(response) {
+	requestai.on('response', function(response) {
 	    console.log(response);
 	});
 	 
-	request.on('error', function(error) {
+	requestai.on('error', function(error) {
 	    console.log(error);
 	});
 	 
-	
+	requestai.end()
 })
 
 app.listen(app.get('port'), function() {
