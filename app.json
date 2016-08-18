@@ -2,6 +2,6 @@
   "name": "The name of your app",
   "description": "the descriptio",
   "repository": "https://github.com/HenriChabrand/testHeroku/",
-  "logo": "https://github.com/HenriChabrand/testHeroku/public/node.svg",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
   "keywords": ["node", "express", "static"]
 }
