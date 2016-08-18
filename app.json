@@ -1,7 +1,7 @@
 {
-  "name": "Node.js Sample",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-sample",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "name": "The name of your app",
+  "description": "the descriptio",
+  "repository": "https://github.com/HenriChabrand/testHeroku/",
+  "logo": "https://github.com/HenriChabrand/testHeroku/public/node.svg",
   "keywords": ["node", "express", "static"]
 }
