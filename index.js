@@ -24,7 +24,7 @@ app.get('/', function(request, response) {
 	    console.log(error);
 	});
 	 
-	request.end()
+	
 })
 
 app.listen(app.get('port'), function() {
