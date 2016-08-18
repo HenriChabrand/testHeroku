@@ -1,32 +1,15 @@
-var express = require('express')
-var app = express()
-
-
 var apiai = require('apiai');
- 
-var appai = apiai("798d7a884de94566872e37c9959f1712");
- 
-var requestai = appai.textRequest('Give me th weather in Paris');
 
+var app = apiai("<your client access token>");
 
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
+var request = app.textRequest('<Your text query>');
 
-app.get('/', function(request, response) {
+request.on('response', function(response) {
+    console.log(response);
+});
 
-	 
-	 
-	requestai.on('response', function(response) {
-	    console.log(response);
-	});
-	 
-	requestai.on('error', function(error) {
-	    console.log(error);
-	});
-	 
-	requestai.end()
-})
+request.on('error', function(error) {
+    console.log(error);
+});
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
+request.end()
