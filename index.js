@@ -1,1 +1,32 @@
-var _0x8137=["\x61\x70\x69\x61\x69","\x37\x39\x38\x64\x37\x61\x38\x38\x34\x64\x65\x39\x34\x35\x36\x36\x38\x37\x32\x65\x33\x37\x63\x39\x39\x35\x39\x66\x31\x37\x31\x32","\x47\x69\x76\x65\x20\x6D\x65\x20\x74\x68\x65\x20\x77\x65\x61\x74\x68\x65\x72\x20\x69\x6E\x20\x4E\x65\x77\x20\x59\x6F\x72\x6B","\x74\x65\x78\x74\x52\x65\x71\x75\x65\x73\x74","\x72\x65\x73\x70\x6F\x6E\x73\x65","\x6C\x6F\x67","\x6F\x6E","\x65\x72\x72\x6F\x72","\x65\x6E\x64"];var apiai=require(_0x8137[0]);var app=apiai(_0x8137[1]);var request=app[_0x8137[3]](_0x8137[2]);request[_0x8137[6]](_0x8137[4],function(_0x539dx4){console[_0x8137[5]](_0x539dx4)});request[_0x8137[6]](_0x8137[7],function(_0x539dx5){console[_0x8137[5]](_0x539dx5)});request[_0x8137[8]]()
+'use strict'
+
+const express = require('express')
+const bodyParser = require('body-parser')
+const request = require('request')
+const app = express()
+
+app.set('port', (process.env.PORT || 5000))
+
+// Process application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended: false}))
+
+// Process application/json
+app.use(bodyParser.json())
+
+// Index route
+app.get('/', function (req, res) {
+    res.send('Hello world, I am a chat bot')
+})
+
+// for Facebook verification
+app.get('/webhook/', function (req, res) {
+    if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
+        res.send(req.query['hub.challenge'])
+    }
+    res.send('Error, wrong token')
+})
+
+// Spin up the server
+app.listen(app.get('port'), function() {
+    console.log('running on port', app.get('port'))
+})
