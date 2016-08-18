@@ -5,7 +5,29 @@ var apiai = require("apiai")
 
 var app = apiai("22db42aa367c4d3b9db67fdf3562c0e0");
 
-var request = app.textRequest('give me the weather');
+var entities = [
+                    {
+                        name: "dwarfs",
+                        entries: [
+                                    {
+                                        value: "Ori",
+                                        synonyms: [
+                                                    "ori",
+                                                    "Nori"
+                                                    ]
+                                    },
+                                    {
+                                        value: "bifur",
+                                        synonyms: [
+                                                    "Bofur",
+                                                    "Bombur"
+                                                    ]
+                                    }
+                                ]
+                    }
+                ];
+
+var request = app.textRequest('Hello ori', {'entities': entities});
 
 request.on('response', function(response) {
     console.log(response);
