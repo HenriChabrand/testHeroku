@@ -1,2 +1,2 @@
-node API_ai/index.js
+node index.js
 
